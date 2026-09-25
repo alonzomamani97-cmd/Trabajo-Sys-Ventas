@@ -20,6 +20,7 @@ public class VentasController {
     @FXML private TextField txtStock;
     @FXML private TextField txtBuscar;
 
+    //herencia borderPane , Vbox , TextFiel , TableView
     @FXML private TableView<Producto> tablaPrendas;
     @FXML private TableColumn<Producto, Integer> colId;
     @FXML private TableColumn<Producto, String> colNombre;
@@ -27,6 +28,7 @@ public class VentasController {
     @FXML private TableColumn<Producto, Double> colPrecio;
     @FXML private TableColumn<Producto, Integer> colStock;
 
+    //polimorfismo
     private final IProductoService service = AppConfig.productoService;
     private Producto productoSeleccionado;
 

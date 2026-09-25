@@ -6,7 +6,7 @@ import java.util.List;
 public interface IProductoRepository {
     List<Producto> findAll();
     Producto findById(int id);
-    void save(Producto producto);
+    void save(Producto producto); // abtraccion
     void update(Producto producto);
     void delete(int id);
 }
