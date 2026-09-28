@@ -61,16 +61,20 @@ public class VentasController {
     }
 
     private void limpiarErroresVisuales() {
-        txtNombre.getStyleClass().remove("input-error");
-        cbTalla.getStyleClass().remove("input-error");
-        txtPrecio.getStyleClass().remove("input-error");
-        txtStock.getStyleClass().remove("input-error");
+        // Estilo normal para los campos cuando están correctos
+        String estiloInputNormal = "-fx-background-color: #0B0E14; -fx-border-color: #242D40; -fx-text-fill: #FFFFFF; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-padding: 8px;";
+        String estiloComboNormal = "-fx-background-color: #0B0E14; -fx-border-color: #242D40; -fx-background-radius: 5px; -fx-border-radius: 5px;";
+
+        txtNombre.setStyle(estiloInputNormal);
+        txtPrecio.setStyle(estiloInputNormal);
+        txtStock.setStyle(estiloInputNormal);
+        cbTalla.setStyle(estiloComboNormal);
     }
 
     private void marcarComoError(Control control) {
-        if (!control.getStyleClass().contains("input-error")) {
-            control.getStyleClass().add("input-error");
-        }
+        // Estilo de alerta con borde rojo intenso y fondo rojizo sutil
+        String estiloError = "-fx-background-color: #2D151A; -fx-border-color: #FF1744; -fx-border-width: 2px; -fx-text-fill: #FFFFFF; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-padding: 8px;";
+        control.setStyle(estiloError);
     }
 
     private boolean validarCampos() {
