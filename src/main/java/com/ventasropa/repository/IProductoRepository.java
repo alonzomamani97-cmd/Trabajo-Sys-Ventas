@@ -3,6 +3,7 @@ package com.ventasropa.repository;
 import com.ventasropa.model.Producto;
 import java.util.List;
 
+//abstraccion sooo dice ( aqui hay metodos para agregar )
 public interface IProductoRepository {
     List<Producto> findAll();
     Producto findById(int id);

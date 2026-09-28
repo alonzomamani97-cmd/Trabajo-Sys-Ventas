@@ -7,6 +7,7 @@ import com.ventasropa.repository.IPrendaRepository;
 import com.ventasropa.service.IPrendaService;
 import java.util.List;
 
+//realizacion (implemens)
 public class PrendaServiceImpl implements IPrendaService {
     private final IPrendaRepository repository;
 
