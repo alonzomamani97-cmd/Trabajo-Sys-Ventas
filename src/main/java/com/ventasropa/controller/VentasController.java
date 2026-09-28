@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 public class VentasController {
 
+    // tipos genericos (type safety)
     @FXML private TextField txtNombre;
     @FXML private ComboBox<Talla> cbTalla;
     @FXML private TextField txtPrecio;
@@ -28,11 +29,12 @@ public class VentasController {
     @FXML private TableColumn<Producto, Double> colPrecio;
     @FXML private TableColumn<Producto, Integer> colStock;
 
-    //polimorfismo
+    //polimorfismo permite que el controlador interactue con el servicio
     private final IProductoService service = AppConfig.productoService;
     private Producto productoSeleccionado;
 
     @FXML
+    //Programación Dirigida por Eventos y Listeners
     public void initialize() {
         cbTalla.setItems(FXCollections.observableArrayList(Talla.values()));
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -59,9 +61,8 @@ public class VentasController {
 
         actualizarTabla();
     }
-
+    // encapsulamiento private protege los datos internos
     private void limpiarErroresVisuales() {
-        // Estilo normal para los campos cuando están correctos
         String estiloInputNormal = "-fx-background-color: #0B0E14; -fx-border-color: #242D40; -fx-text-fill: #FFFFFF; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-padding: 8px;";
         String estiloComboNormal = "-fx-background-color: #0B0E14; -fx-border-color: #242D40; -fx-background-radius: 5px; -fx-border-radius: 5px;";
 
@@ -72,7 +73,6 @@ public class VentasController {
     }
 
     private void marcarComoError(Control control) {
-        // Estilo de alerta con borde rojo intenso y fondo rojizo sutil
         String estiloError = "-fx-background-color: #2D151A; -fx-border-color: #FF1744; -fx-border-width: 2px; -fx-text-fill: #FFFFFF; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-padding: 8px;";
         control.setStyle(estiloError);
     }
@@ -137,6 +137,7 @@ public class VentasController {
         if (!validarCampos()) return;
 
         try {
+            //un objeto en la memoria ram
             ProductoDTO dto = new ProductoDTO(txtNombre.getText(), cbTalla.getValue(),
                     Double.parseDouble(txtPrecio.getText()),
                     Integer.parseInt(txtStock.getText()));
@@ -189,6 +190,7 @@ public class VentasController {
     }
 
     @FXML
+    //Programación Funcional y Expresiones Lambda
     protected void onBuscarClick() {
         String filtro = txtBuscar.getText().toLowerCase();
         if (filtro.isEmpty()) {

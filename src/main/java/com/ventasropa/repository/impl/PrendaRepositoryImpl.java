@@ -52,8 +52,8 @@ public class PrendaRepositoryImpl implements IPrendaRepository {
         guardarDatosEnArchivo();
     }
 
-    // --- MÉTODOS PARA GUARDAR Y LEER EL ARCHIVO ---
 
+    // try(intentar) y cath ( capturar) para el manejo de excepciones
     private void guardarDatosEnArchivo() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(ARCHIVO_DATOS))) {
             for (Prenda p : prendas) {

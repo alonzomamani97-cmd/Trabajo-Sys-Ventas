@@ -20,7 +20,7 @@
             <padding>
                 <Insets top="15" right="25" bottom="15" left="25"/>
             </padding>
-            <Label text="ROPA BOUTIQUE PRO" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #FFFFFF;" />
+            <Label text="Venta de Ropa" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #FFFFFF;" />
             <Region HBox.hgrow="ALWAYS" />
             <Label text="Módulo de Gestión de Inventario" style="-fx-font-size: 13px; -fx-text-fill: #00E5FF; -fx-font-weight: bold;" />
         </HBox>
